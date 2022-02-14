@@ -477,7 +477,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftlint --config .swiftlint.yml\n";
+			shellScript = "\n# Adds support for Apple Silicon brew directory\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint; then\n    swiftlint --config .swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
